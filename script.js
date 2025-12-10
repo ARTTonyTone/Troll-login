@@ -31,6 +31,30 @@ function nextStep(currentStepId) {
         redirectToRickroll();
     }
 }
+function Login(){
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    if(username == "ARTTonyTone" && password == "r_mute"){
+        nextStep(1);
+    }
+    if(password != "r_mute"){
+        showError("Password: r_mute");
+    }
+    else if(username == ""){
+        showError("Username should not be empty.");
+    }
+    else if(username != "ARTTonyTone") {
+        showError("Only ARTTonyTone can access this site.");
+        setTimeout(() => {
+            showError("Anyway, pass this time.");
+        }, 2000);
+    }
+    if(password == "r_mute" && username != ""){
+        setTimeout(() => {
+            nextStep(1);
+        }, 2000);
+    }
+}
 
 function showError(msg) {
     const errDiv = document.getElementById('error-msg');

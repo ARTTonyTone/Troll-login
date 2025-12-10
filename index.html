@@ -12,39 +12,39 @@
 <body style="background-image: url(&quot;assets/bg1.png&quot;); background-size: cover; background-position: center center;">
 
     <div class="dnd-container">
-        <h1 class="main-title">ZİNDAN QAPISI</h1>
+        <h1 class="main-title">DUNGEON GATE</h1>
 
         <div id="step-1" class="step active">
-            <h2>Giriş Kimliyi</h2>
-            <input type="text" placeholder="İstifadəçi adı" id="username">
-            <input type="password" placeholder="Şifrə" id="password">
-            <button onclick="nextStep(1)">Daxil ol</button>
+            <h2>Login ID</h2>
+            <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <button onclick="Login()">Log In</button>
         </div>
 
         <div id="step-2" class="step">
-            <h2>Təhlükəsizlik Yoxlaması</h2>
-            <p>Xahiş edirik, robot olduğunuzu təsdiqləyin.</p>
+            <h2>Security Check</h2>
+            <p>Please confirm that you are a robot.</p>
             <div class="checkbox-container">
                 <input type="checkbox" id="not-human-check">
-                <label for="not-human-check">Mən insan deyiləm</label>
+                <label for="not-human-check">I'm not a human</label>
             </div>
-            <button onclick="checkNotHuman()">Davam et</button>
+            <button onclick="checkNotHuman()">Continue</button>
         </div>
 
         <div id="step-3" class="step">
-            <h2>Qədim Riyaziyyat</h2>
-            <p>Davam etmək üçün bu tənliyi həll edin:</p>
+            <h2>Ancient Mathematics</h2>
+            <p>Solve this equation to continue.:</p>
             <div class="math-problem">
                 $$ \int_{0}^{\infty} \frac{\sin(x)}{x} dx = ? $$
             </div>
-            <p style="font-size: 12px; color: gray;">(İpucu: Cavab π/2-dir, amma ondalıq kəsrlə yazmalısan: 1.57)</p>
-            <input type="text" id="math-answer" placeholder="Cavab...">
-            <button onclick="checkMath()">Hesabla</button>
+            <p style="font-size: 12px; color: gray;">(Hint: The answer is π/2, but you must write it as a decimal: 1.57)</p>
+            <input type="text" id="math-answer" placeholder="Answer...">
+            <button onclick="checkMath()">Calculate</button>
         </div>
 
         <div id="step-4" class="step">
-            <h2>Sehr Yüklənir...</h2>
-            <p>Zəhmət olmasa tərpənməyin.</p>
+            <h2>Loading Magic...</h2>
+            <p>Please don't move..</p>
             <div class="loading-bar">
                 <div class="progress" id="progress-bar"></div>
             </div>
@@ -52,16 +52,16 @@
         </div>
 
         <div id="step-5" class="step">
-            <h2>Sfenksin Tapmacası</h2>
-            <p>"Səhər 4 ayaqlı, günorta 2 ayaqlı, axşam 3 ayaqlı gəzən nədir?"</p>
+            <h2>The Riddle of the Sphinx</h2>
+            <p>"What walks on 4 legs in the morning, 2 legs in the afternoon, and 3 legs in the evening?"</p>
             <div class="riddle-options">
-                <button onclick="wrongAnswer()">Pişik</button>
-                <button onclick="nextStep(5)">İnsan</button>
-                <button onclick="wrongAnswer()">Əjdaha</button>
+                <button onclick="wrongAnswer()">Cat</button>
+                <button onclick="nextStep(5)">Human</button>
+                <button onclick="wrongAnswer()">Dragon</button>
             </div>
         </div>
 
-        <div id="error-msg" class="hidden">YANLIŞ SEÇİM! CANIN AZALDI!</div>
+        <div id="error-msg" class="hidden">WRONG CHOICE! YOUR LIFE IS LOW!</div>
     </div>
 
     <script src="script.js"></script>
