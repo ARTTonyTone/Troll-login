@@ -7,6 +7,8 @@
 body {
     background-color: #050505;
     background-image: url('assets/bg1.png');
+    background-size: "cover";
+    background-position: "center"
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     height: 100vh;
