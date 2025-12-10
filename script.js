@@ -70,7 +70,7 @@ function checkNotHuman() {
     if (checkbox.checked) {
         nextStep(2);
     } else {
-        showError("SƏHV! Sən insan olduğunu iddia edirsən? Bizə BOT lazımdır!");
+        showError("ERROR! Are you claiming to be human? We need a BOT!");
     }
 }
 
@@ -79,7 +79,7 @@ function checkMath() {
     if (answer === "1.57") {
         nextStep(3);
     } else {
-        showError("Riyaziyyatın zəifdir, səyyah! Cavab 1.57 olmalıdır.");
+        showError("Your math is weak, traveler! The answer should be 1.57.");
     }
 }
 
@@ -106,12 +106,12 @@ function startLoading() {
 }
 
 function wrongAnswer() {
-    showError("Yanlış qapı! Əjdaha səni yedi.");
+    showError("Wrong door! The dragon ate you.");
     location.reload();
 }
 
 function redirectToRickroll() {
-    document.querySelector('.dnd-container').innerHTML = "<h1>SİSTEMƏ GİRİŞ UĞURLUDUR...</h1>";
+    document.querySelector('.dnd-container').innerHTML = "<h1>LOGIN SUCCESSFUL...</h1>";
     setTimeout(() => {
         window.location.href = RICKROLL_URL;
     }, 1500);
