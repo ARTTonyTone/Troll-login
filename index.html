@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zindan Qapısı - Giriş</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dnd-container">
+        <h1 class="main-title">ZİNDAN QAPISI</h1>
+
+        <div id="step-1" class="step active">
+            <h2>Giriş Kimliyi</h2>
+            <input type="text" placeholder="İstifadəçi adı" id="username">
+            <input type="password" placeholder="Şifrə" id="password">
+            <button onclick="nextStep(1)">Daxil ol</button>
+        </div>
+
+        <div id="step-2" class="step">
+            <h2>Təhlükəsizlik Yoxlaması</h2>
+            <p>Xahiş edirik, robot olduğunuzu təsdiqləyin.</p>
+            <div class="checkbox-container">
+                <input type="checkbox" id="not-human-check">
+                <label for="not-human-check">Mən insan deyiləm</label>
+            </div>
+            <button onclick="checkNotHuman()">Davam et</button>
+        </div>
+
+        <div id="step-3" class="step">
+            <h2>Qədim Riyaziyyat</h2>
+            <p>Davam etmək üçün bu tənliyi həll edin:</p>
+            <div class="math-problem">
+                $$ \int_{0}^{\infty} \frac{\sin(x)}{x} dx = ? $$
+            </div>
+            <p style="font-size: 12px; color: gray;">(İpucu: Cavab π/2-dir, amma ondalıq kəsrlə yazmalısan: 1.57)</p>
+            <input type="text" id="math-answer" placeholder="Cavab...">
+            <button onclick="checkMath()">Hesabla</button>
+        </div>
+
+        <div id="step-4" class="step">
+            <h2>Sehr Yüklənir...</h2>
+            <p>Zəhmət olmasa tərpənməyin.</p>
+            <div class="loading-bar">
+                <div class="progress" id="progress-bar"></div>
+            </div>
+            <p id="loading-text">0%</p>
+        </div>
+
+        <div id="step-5" class="step">
+            <h2>Sfenksin Tapmacası</h2>
+            <p>"Səhər 4 ayaqlı, günorta 2 ayaqlı, axşam 3 ayaqlı gəzən nədir?"</p>
+            <div class="riddle-options">
+                <button onclick="wrongAnswer()">Pişik</button>
+                <button onclick="nextStep(5)">İnsan</button>
+                <button onclick="wrongAnswer()">Əjdaha</button>
+            </div>
+        </div>
+
+        <div id="error-msg" class="hidden">YANLIŞ SEÇİM! CANIN AZALDI!</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
